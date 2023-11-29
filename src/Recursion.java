@@ -16,6 +16,8 @@ public class Recursion {
         System.out.println("The sum of all elements of a list: "+list.addList(list.head));
         System.out.print("All the elements of a list printed in reverse order: ");
         list.printListReverse(list.head);
+        String[] name = {"Iyer", "Venugopal", "Mutthuswami", "Chinnaswami", "Perumbator", "Yekyaparampeel", "Tiruchipalli", "Srinivasana", "Rajashekhara", "Shivavenkata", "Shivaramakrishna", "Laxmana", "Jayasuriya", "Atapattu", "Sripalawardana", "Prabhakarana"};
+        iyer(name, name.length);
         System.out.println();
     }
 
@@ -62,6 +64,21 @@ public class Recursion {
         else{
             rem = n%2;
             return dec2bin(n/2)+rem;
+        }
+    }
+
+    /*
+    The following method will print the name of a person named IYER
+    Ref: Dhamaal(2007 film)
+    */
+    private static void iyer(String[] name, int n){
+        if(n<0) return;
+        else{
+            iyer(name, n-1);
+            for(int i = n-1; i>=0; i--){
+                System.out.print(name[i]+" ");
+            }
+            System.out.println();
         }
     }
 }
